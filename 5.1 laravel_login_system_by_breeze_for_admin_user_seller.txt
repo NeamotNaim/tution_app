@@ -1,0 +1,67 @@
+tutorial: https://easylearningbd.com/courses/1583307/lectures/36156855
+
+
+1. install laravel latest  project 
+2. install authentication system by breeze package  link:https://laravel.com/docs/9.x/starter-kits#laravel-breeze
+   first install breeze , then  npm
+ 
+3. edit everythig for user login system from default login provided by laravel
+   create database and connect database name, then migrate it.
+4. now create admin login system 
+
+
+  1.create database    php artisan make:migration create_admins_table
+    now edit it as like users_table. take status field if you need  $table->tinyInteger('status')->default(0);
+  2.create model       php artisan make:model Admin -m   copy everythig from user.php to admin.php
+    keep on eye that these link use on admin model
+    use Illuminate\Foundation\Auth\User as Authenticatable;
+    use Illuminate\Notifications\Notifiable;
+    use Laravel\Sanctum\HasApiTokens;
+
+    make change as   class Admin extends Model to   class Admin extends Authenticatable
+
+    add these line before protected $fillable             protected $gaurd ='admin';
+    now php artisan migrate
+  3.now create guard by changing in config folder auth.php  file in guards and providers 
+   'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+     'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',//as admins table
+        ],
+    ],
+
+   'providers' => [
+        'users' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\User::class,
+        ],
+
+         'admins' => [
+             'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,//as admin class model
+         ],
+    ],
+  4. make middleware         php artisan make:middleware Admin
+        in public function handle 
+
+       if(Auth::guard('admin')->check()){
+            return redirect()->route('login_form')->with('error','Plz Login First');
+        }
+   
+        return redirect(‘home’)->with(‘error’,"You don't have admin access.");
+
+       register the middleware in kernal.php as protected $routeMiddleware  'admin' => \App\Http\Middleware\Admin::class,   
+ 
+  5. make controller  admin       php artisan make:controller AdminController
+
+
+  6.Now routing for  admin in web.php
+      Route::prefix('admin')->group(function () {
+    Route::get('/login',[AdminController::class,'index'])->name('login_form');//in index function return login form page
+    Route::get('/owner',[AdminController::class,'login'])->name('admin.login');//
+    Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
+      });
