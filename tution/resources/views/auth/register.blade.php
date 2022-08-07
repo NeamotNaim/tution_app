@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <h2>Teacher Registration</h2>
             </a>
         </x-slot>
 
@@ -41,7 +41,7 @@
             <div  class="mt-4">
                 <x-label for="class" :value="__('Interested class/Subject')" />
 
-                <select id="class"  class="block mt-1 w-full" type="select" name="class" :value="old('class')"   >
+                <select id="class"  class="block mt-1 w-full" type="select" name="class"    >
                 <option value="class1">class 1</option>
                 <option value="class2">class 2</option>
                 <option value="class3">class 3</option>
@@ -50,13 +50,13 @@
                 <option value="class6">class 6</option>
                 <option value="class7">class 7</option>
                 <option value="class8">class 8</option>
-                <option value="class1">Physics</option>
-                <option value="class1">Chemistry</option>
-                <option value="class1">Mathematics</option>
-                <option value="class1">Higher Math</option>
-                <option value="class1">Biology</option>
-                <option value="class1">Bangla</option>
-                <option value="class1">English</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="math">Mathematics</option>
+                <option value="higher_math">Higher Math</option>
+                <option value="biology">Biology</option>
+                <option value="bangla">Bangla</option>
+                <option value="english">English</option>
                 </select>
                 
             </div>
@@ -82,8 +82,8 @@
             <div  class="mt-4">
                 <x-label for="gender" :value="__('Gender')" />
 
-                <x-input id="gender" class="" type="radio" name="gender" :value="old('male')"   />Male
-                <x-input id="gender" class=" " type="radio" name="gender" :value="old('female')"   />Female
+                <x-input id="gender" class="" type="radio" name="gender" :value="old('male')" value="male"  />Male
+                <x-input id="gender" class=" " type="radio" name="gender" :value="old('female')" value="female"   />Female
             </div>
 
             <!-- Password -->
