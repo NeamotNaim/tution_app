@@ -1,9 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+            
                 <h2>Teacher Registration</h2>
-            </a>
+            
         </x-slot>
 
         <!-- Validation Errors -->

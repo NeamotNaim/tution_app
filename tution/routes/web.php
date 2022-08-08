@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +22,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+// Route::post('/search-for-teacher', function (Request $request) {
+//  return hello;
+// })->name('searchforteacher');
+
+
+Route::post(
+    '/user/profile',
+    [HomeController::class, 'search']
+)->name('searchforteacher');
