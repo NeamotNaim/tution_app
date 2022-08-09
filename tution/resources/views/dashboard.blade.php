@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="container emp-profile">
+    <div class="container emp-profile mx-5 mt-5">
             <form method="post">
                 <div class="row">
                     <div class="col-md-4">
