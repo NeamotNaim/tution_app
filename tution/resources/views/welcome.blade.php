@@ -25,18 +25,66 @@
         </style>
     </head>
     <body class="antialiased">
+        <!-- menu and navbar -->
+        <div class="container "  >
+            <div class="menubar py-2">
+                <nav class="navbar navbar-expand-lg navbar-light nav-sticky fs-5 ">
+                    <img src="img/logo.png" style="height: 30px;" class="image-fluid;" alt="">
+                    <div class="p-2 bg-primary " style="border-radius: 10px; color:#fff">
+                      <a class="navbar-brandv" href="#"><b>Tuition/Tutor</b></a>
+                    </div>
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto text-center ">
+                        <li class="nav-item active " style="margin-left:5px; background-color:rgb(204, 203, 203); border-radius: 5px; color:rgb(0, 0, 0)">
+                            <a class="nav-link mr-4" href="#">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item mr-4" style="margin-left:5px; background-color:rgb(204, 203, 203); border-radius: 5px; color:rgb(0, 0, 0)">
+                            <a class="nav-link" href="#">Request a tutor</a>
+                        </li>
+                        <li class="nav-item mr-4" style="margin-left:5px; background-color:rgb(204, 203, 203); border-radius: 5px; color:rgb(0, 0, 0)">
+                            <a class="nav-link" href="#">Tuition</a>
+                        </li>
+                        <li class="nav-item mr-4" style="margin-left:5px; background-color:rgb(204, 203, 203); border-radius: 5px; color:rgb(0, 0, 0)">
+                            <a class="nav-link" href="#">Search</a>
+                        </li>
+                        
+                        <li class="nav-item mr-4" style="margin-left:5px; background-color:rgb(204, 203, 203); border-radius: 5px; color:rgb(0, 0, 0)">
+                            <a class="nav-link" href="#">About us</a>
+                        </li>
+
+                    </ul>
+                    {{-- <form class="form-inline my-2 my-lg-0">
+
+                        <button class=" search-btn btn btn-basic-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    </form> --}}
+                    </div>
+                </nav>
+            </div>
+        </div>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
+                <div class=" hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                    
+                     @auth
+                    
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Teacher Login</a>
+                         
+                        <a href="{{ route('login') }}" class="p-2 text-sm text-gray-700 dark:text-gray-500 bold" style="background-color:rgb(204, 203, 203);color:rgb(3, 0, 0);border-radius:6px; " >Teacher Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Teacher Register</a>
+                        
+                            <a href="{{ route('register') }}" class="p-2 p-1 ml-4 text-sm text-gray-700 dark:text-gray-500 " style="background-color:rgb(204, 203, 203);color:rgb(3, 0, 0);border-radius:6px;">Teacher Register</a>
                         @endif
                     @endauth
+                    
+                    
                 </div>
             @endif
            
@@ -55,6 +103,7 @@
                                 @csrf
                                 <div class="inline-group  inline">
                                     <input data-hj-whitelist="" id="searchforteacher" class="form-control tooltips width-auto display-inline-block searchInputWidth xxs-full-width pac-target-input" type="text"  name="searchforteacher" placeholder="Class/Subject"  data-toggle="tooltip" data-placement="top" autocomplete="off" style="width: 284px !important;"><br>
+                                     <input data-hj-whitelist="" id="searchforteacher" class="form-control tooltips width-auto display-inline-block searchInputWidth xxs-full-width pac-target-input" type="text"  name="searchforteacher" placeholder="Class/Subject"  data-toggle="tooltip" data-placement="top" autocomplete="off" style="width: 284px !important;"><br>
 
                                     <button  aria-label="Search Button" id="searchBtn" class="form-control btn btn-primary  width-auto display-inline-block xxs-full-width lockForSearch" data-style="zoom-out" type="submit" style="min-width: 39px; vertical-align: top; background-color: rgb(114, 124, 245);border-color: rgb(114, 124, 245);">
 			                    		
@@ -186,7 +235,32 @@
                     </div>
                 </div>
             </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+            <div><button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-chevron-up"></i></button></div>
+            <script>
+       //Get the button:
+         mybutton = document.getElementById("myBtn");
+      
+
+         // When the user scrolls down 20px from the top of the document, show the button
+         window.onscroll = function () { scrollFunction() };
+
+         function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+               mybutton.style.display = "block";
+            } else {
+               mybutton.style.display = "none";
+            }
+         }
+
+         // When the user clicks on the button, scroll to the top of the document
+         function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+         }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         
     </body>
 </html>
