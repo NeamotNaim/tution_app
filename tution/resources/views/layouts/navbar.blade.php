@@ -18,7 +18,7 @@
                             <a class="nav-link mr-4" href="{{url('/')}}">Home<span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item mr-4" style="margin-left:5px; background-color:rgb(204, 203, 203); border-radius: 5px; color:rgb(0, 0, 0)">
-                            <a class="nav-link" href="#">Request a tutor</a>
+                            <a class="nav-link" href="{{route('reqTutor')}}">Request a tutor</a>
                         </li>
                         <li class="nav-item mr-4" style="margin-left:5px; background-color:rgb(204, 203, 203); border-radius: 5px; color:rgb(0, 0, 0)">
                             <a class="nav-link" href="#">Tuition</a>

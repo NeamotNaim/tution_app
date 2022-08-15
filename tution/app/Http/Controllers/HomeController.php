@@ -13,5 +13,9 @@ class HomeController extends Controller
      public function ShowaboutPage(){
         return view('pages.about_us');
     }
+
+    public function ShowReqTutorPage(){
+        return view('pages.req_for_tutor');
+    }
   
 }

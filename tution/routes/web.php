@@ -40,3 +40,7 @@ Route::get('/advanced/search',
 Route::get('/about/us',
     [HomeController::class, 'ShowaboutPage']
 )->name('aboutUs');
+
+Route::get('/request/tutor',
+    [HomeController::class, 'ShowReqTutorPage']
+)->name('reqTutor');
