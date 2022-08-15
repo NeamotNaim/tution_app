@@ -22,6 +22,7 @@
         </style>
     </head>
     <body class="antialiased">
+        @include('layouts.navbar')
         <div class="relative flex items-top justify-center  bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -51,18 +52,29 @@
                             <form method="post" action="{{route('searchforteacher')}}" class="form-inline sky-form- page-search-form  " id="searchLocationForm" style="margin: 0 auto; display: table; background-color: #fafafa; border-bottom:none; padding: 0px;">
                                 @csrf
                                 <div class="inline-group  inline">
-
+                                    <input data-hj-whitelist="" id="requireclass" class="form-control tooltips width-auto display-inline-block searchInputWidth xxs-full-width pac-target-input" type="text"  name="requireclass" placeholder="Class/Subject"  data-toggle="tooltip" data-placement="top"  style="width: 284px !important;"><br>
+                                    <input data-hj-whitelist="" id="location" class="form-control tooltips width-auto display-inline-block searchInputWidth xxs-full-width pac-target-input" type="text"  name="location" placeholder="Location"  data-toggle="tooltip" data-placement="top" autocomplete="off" style="width: 284px !important;"><br>
+                                    <select id="salary"  class="mb-4 form-control tooltips width-auto display-inline-block searchInputWidth xxs-full-width pac-target-input" type="select"  name="salary" placeholder="Salary"  data-toggle="tooltip" data-placement="top" autocomplete="off" style="width: 284px !important;"><br><br>
+                                    <option value=""selected  disabled hidden >Select Salary Range</option>
                                     
-
-                                    <input data-hj-whitelist="" id="searchforteacher" class="form-control tooltips width-auto display-inline-block searchInputWidth xxs-full-width pac-target-input" type="text"  name="searchforteacher" placeholder="Class/Subject"  data-toggle="tooltip" data-placement="top" autocomplete="off" style="width: 284px !important;"><br>
+                                    <option value="1000-2000">1000-2000</option>
+                                    <option value="2000-2500">2000-2500</option>
+                                    <option value="2500-3000">2500-3000</option>
+                                    <option value="3000-3500">3000-3500</option>
+                                    <option value="3500-4000">3500-4000</option>
+                                    <option value="4000-5000">4000-5000</option>
+                                    <option value="5000-7000">5000-7000</option>
+                                    <option value="7000-10000">7000-10000</option>
+                                    <option value="Above 10000">Above 10000</option>
+                                    
+                                    </select>
+                                   
 
                                     <button  aria-label="Search Button" id="searchBtn" class="form-control btn btn-primary  width-auto display-inline-block xxs-full-width lockForSearch" data-style="zoom-out" type="submit" style="min-width: 39px; vertical-align: top; background-color: rgb(114, 124, 245);border-color: rgb(114, 124, 245);">
 			                    		
 			                    		 <span id="hidden-xs-search" class="hidden-xs" style="">Search</span>
                                     </button>
-
                                 </div>   
-
                             </form>
                         </div>
                     </div>
@@ -172,6 +184,7 @@
               Gender: <b>{{$item->gender}}</b></br>
               Contact: <b>{{$item->phone}}</b></br>
               Address: <b>{{$item->address}}</b></br>
+              Salary: <b>{{$item->salary}}</b></br>
             </p>
               {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
            </div>

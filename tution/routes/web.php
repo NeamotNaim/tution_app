@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QueryController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,14 @@ require __DIR__.'/auth.php';
 // })->name('searchforteacher');
 
 
-Route::post(
-    '/user/profile',
-    [HomeController::class, 'search']
+Route::post('/user/search',
+    [QueryController::class, 'search']
 )->name('searchforteacher');
+
+Route::get('/advanced/search',
+    [HomeController::class, 'ShowsearchPage']
+)->name('searchPage');
+
+Route::get('/about/us',
+    [HomeController::class, 'ShowaboutPage']
+)->name('aboutUs');

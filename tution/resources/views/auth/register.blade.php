@@ -37,29 +37,7 @@
 
                 <x-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus />
             </div>
-             <!-- Class -->
-            <div  class="mt-4">
-                <x-label for="class" :value="__('Interested class/Subject')" />
-
-                <select id="class"  class="block mt-1 w-full" type="select" name="class"    >
-                <option value="class1">class 1</option>
-                <option value="class2">class 2</option>
-                <option value="class3">class 3</option>
-                <option value="class4">class 4</option>
-                <option value="class5">class 5</option>
-                <option value="class6">class 6</option>
-                <option value="class7">class 7</option>
-                <option value="class8">class 8</option>
-                <option value="physics">Physics</option>
-                <option value="chemistry">Chemistry</option>
-                <option value="math">Mathematics</option>
-                <option value="higher_math">Higher Math</option>
-                <option value="biology">Biology</option>
-                <option value="bangla">Bangla</option>
-                <option value="english">English</option>
-                </select>
-                
-            </div>
+             
             <!-- School -->
             <div  class="mt-4">
                 <x-label for="school" :value="__('University/College Name')" />
@@ -84,6 +62,48 @@
 
                 <x-input id="gender" class="" type="radio" name="gender" :value="old('male')" value="male"  />Male
                 <x-input id="gender" class=" " type="radio" name="gender" :value="old('female')" value="female"   />Female
+            </div>
+            <!-- Class -->
+            <div  class="mt-4">
+                <x-label for="class" :value="__('Interested class/Subject')" />
+
+                <select id="class"  class="block mt-1 w-full" type="select" name="class"    >
+                <option value="class1">class 1</option>
+                <option value="class2">class 2</option>
+                <option value="class3">class 3</option>
+                <option value="class4">class 4</option>
+                <option value="class5">class 5</option>
+                <option value="class6">class 6</option>
+                <option value="class7">class 7</option>
+                <option value="class8">class 8</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="math">Mathematics</option>
+                <option value="higher_math">Higher Math</option>
+                <option value="biology">Biology</option>
+                <option value="bangla">Bangla</option>
+                <option value="english">English</option>
+                </select>
+                
+            </div>
+            <!-- Salary Range -->
+            <div  class="mt-4">
+                <x-label for="class" :value="__('Salary Range')" />
+
+                <select id="salary"  class="block mt-1 w-full" type="select" name="salary"    >
+                <option value="Negotiable" selected>Negotiable</option>
+                <option value="1000-2000">1000-2000</option>
+                <option value="2000-2500">2000-2500</option>
+                <option value="2500-3000">2500-3000</option>
+                <option value="3000-3500">3000-3500</option>
+                <option value="3500-4000">3500-4000</option>
+                <option value="4000-5000">4000-5000</option>
+                <option value="5000-7000">5000-7000</option>
+                <option value="7000-10000">7000-10000</option>
+                <option value="Above 10000">Above 10000</option>
+                
+                </select>
+                
             </div>
 
             <!-- Password -->

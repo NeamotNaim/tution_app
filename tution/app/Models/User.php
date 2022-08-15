@@ -31,6 +31,7 @@ class User extends Authenticatable
         'uni_col_name',
         'dept',
         'age',
+        'salary',
     ];
 
     /**

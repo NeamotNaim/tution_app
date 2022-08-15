@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('uni_col_name')->nullable();
             $table->string('dept')->nullable();
             $table->integer('age')->nullable();
+            $table->string('salary')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

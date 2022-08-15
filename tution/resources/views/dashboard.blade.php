@@ -138,6 +138,7 @@
                                                 <p>{{Auth::user()->address}}</p>
                                             </div>
                                         </div>
+                                       
                                         
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -154,7 +155,7 @@
                                                 <label>Monthly Rate</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>4000-6000</p>
+                                                <p>{{Auth::user()->salary}}</p>
                                             </div>
                                         </div>
                                         <div class="row">

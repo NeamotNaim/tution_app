@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
     //         $user->save();
 
     //3rd data
-    for ($i=0; $i <50 ; $i++) { 
+    for ($i=0; $i <25 ; $i++) { 
          $facker=Faker::create();
 
             $user=new User;
