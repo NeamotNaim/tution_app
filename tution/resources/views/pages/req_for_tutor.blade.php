@@ -9,7 +9,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('postForTtutor') }}">
             @csrf
 
             <!--Student Name -->
@@ -46,7 +46,7 @@
             </div>
             <!-- Class -->
             <div  class="mt-4">
-                <x-label for="class" :value="__('Interested class/Subject')" />
+                <x-label for="class" :value="__('Class')" />
 
                 <select id="class"  class="block mt-1 w-full" type="select" name="class"    >
                 <option value="class1">class 1</option>
@@ -93,13 +93,13 @@
             </div>
              <!-- age -->
             <div  class="mt-4">
-                <x-label for="age" :value="__('Age')" />
+                <x-label for="age" :value="__('Student Age')" />
 
                 <x-input id="age" class="block mt-1 w-full" type="text" name="age" :value="old('age')"   />
             </div>
              <!-- Gender -->
             <div  class="mt-4">
-                <x-label for="gender" :value="__('Gender')" />
+                <x-label for="gender" :value="__('Student Gender')" />
 
                 <x-input id="gender" class="" type="radio" name="gender" :value="old('male')" value="male"  />Male
                 <x-input id="gender" class=" " type="radio" name="gender" :value="old('female')" value="female"   />Female

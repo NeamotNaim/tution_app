@@ -26,14 +26,11 @@ return new class extends Migration
             $table->string('merit')->nullable();
             $table->integer('age')->nullable();
             $table->string('gender')->nullable();
-            
             $table->string('salary')->nullable();
-            
             $table->string('days_per_week')->nullable();
             $table->string('tutor_gender')->nullable();
             $table->string('additional_info')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
            

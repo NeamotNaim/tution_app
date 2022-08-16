@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QueryController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -44,3 +45,12 @@ Route::get('/about/us',
 Route::get('/request/tutor',
     [HomeController::class, 'ShowReqTutorPage']
 )->name('reqTutor');
+
+//post for teacher
+Route::post('/post/for/teacher',
+    [PostController::class, 'store']
+)->name('postForTtutor');
+//find tuition 
+Route::get('/tuition/available',
+    [PostController::class, 'index']
+)->name('findTuition');
