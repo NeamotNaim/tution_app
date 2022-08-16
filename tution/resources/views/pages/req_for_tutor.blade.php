@@ -70,17 +70,17 @@
 
                 
                 <select id="subject"  class="block mt-1 w-full" type="select" name="subject"    >
-                <option value="all">All Subject</option>
-                <option value="bangla">Bangla</option>
-                <option value="bangla">English</option>
-                <option value="bangla">General Math</option>
-                <option value="bangla">Higher Math</option>
-                <option value="bangla">Physics</option>
-                <option value="bangla">Chemistry</option>
-                <option value="bangla">Biology</option>
-                <option value="bangla">Accounting</option>
-                <option value="bangla">Finance</option>
-                <option value="bangla">Economics</option>
+                <option value="All Subject">All Subject</option>
+                <option value="Bangla">Bangla</option>
+                <option value="English">English</option>
+                <option value="General Math">General Math</option>
+                <option value="Higher Math">Higher Math</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Biology">Biology</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Finance">Finance</option>
+                <option value="Economics">Economics</option>
                 
                 
                 </select>
