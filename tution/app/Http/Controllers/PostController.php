@@ -20,7 +20,7 @@ class PostController extends Controller
             'address' => ['required', 'string', 'max:255'],
             'class' => ['required', 'string', 'max:255'],
             'subject' => ['required', 'string', 'max:255'],
-           
+
         ]);
 
         $user = Post::create([
